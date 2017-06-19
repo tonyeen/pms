@@ -1,0 +1,58 @@
+
+buildscript {
+    ext {
+		springBootVersion = "1.5.4.RELEASE"
+	}
+    
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+    }
+}
+
+allprojects {
+    group = "org.qianrenxi"
+    version = "0.1.1"
+
+    apply plugin: "java"
+    apply plugin: "war"
+    apply plugin: 'eclipse-wtp'
+    apply plugin: "org.springframework.boot"
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    
+    javadoc.options.encoding = "utf-8"
+    javadoc.options.charSet = "utf-8"
+
+    configurations {
+        providedRuntime
+    }
+
+    repositories {
+        maven { url "http://maven.parim.net/nexus/content/groups/public/" }
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+    	compile fileTree(dir: "lib", exclude:"", include: "*.jar")
+    }
+
+    springBoot {
+		// mainClass = "org.qianrenxi.pms.SparkApplication";
+	}
+}
+
+subprojects {
+    dependencies {
+    	testCompile("org.springframework.boot:spring-boot-starter-test")
+    }
+}
+
+configure(rootProject) {
+    // apply plugin: "eclipse-wtp"
+}
