@@ -54,5 +54,13 @@ subprojects {
 }
 
 configure(rootProject) {
-    // apply plugin: "eclipse-wtp"
+    apply plugin: "eclipse-wtp"
+    
+    dependencies {
+    	compile project(':common')
+    	compile project(':system-provider')
+    	compile project(':pms-provider')
+    	compile project(':pms-rest')
+    	compile project(':pms-api')
+    }
 }

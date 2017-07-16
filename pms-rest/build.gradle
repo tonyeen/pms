@@ -1,5 +1,4 @@
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web')
-	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
+	compile project(':pms-provider')
 }

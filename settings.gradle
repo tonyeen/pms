@@ -18,5 +18,9 @@ include 'services:webservice'
 
 rootProject.name = 'pms'
 
+include 'common'
+include 'system-provider'
+
 include 'pms-provider'
 include 'pms-rest'
+include 'pms-api'

@@ -1,0 +1,14 @@
+apply plugin: 'eclipse-wtp'
+
+dependencies {
+	compile project(':common')
+	
+	compile "org.apache.shiro:shiro-core:1.3.2"
+	compile "org.apache.shiro:shiro-web:1.3.2"
+	compile "org.apache.shiro:shiro-spring:1.3.2"
+	// compile "org.apache.shiro:shiro-ehcache:1.3.2"
+	
+	// compile "com.github.theborakompanioni:thymeleaf-extras-shiro:2.0.0" // 和spring boot的thymeleaf版本不相符
+	compile "com.github.theborakompanioni:thymeleaf-extras-shiro:1.2.1"
+	
+}
